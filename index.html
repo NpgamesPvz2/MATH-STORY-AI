@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MATH STORY AI - Xưởng Sáng Tạo Câu Chuyện Toán Học</title>
+    <meta name="description" content="Xưởng sáng tạo câu chuyện Toán học bằng Trí tuệ Nhân tạo dành cho học sinh tiểu học. Giải pháp đổi mới phương pháp dạy học theo Chương trình GDPT 2018." />
+    <meta property="og:title" content="MATH STORY AI - Xưởng Sáng Tạo Câu Chuyện Toán Học" />
+    <meta property="og:description" content="Xưởng sáng tạo câu chuyện Toán học bằng Trí tuệ Nhân tạo dành cho học sinh tiểu học. Giải pháp đổi mới phương pháp dạy học theo Chương trình GDPT 2018." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Gracefully prevent benign Vite/browser WebSocket closed without opened logs in sandbox iframe
+      window.addEventListener('error', function(e) {
+        var msg = (e && e.message) ? e.message.toLowerCase() : '';
+        if (msg.includes('websocket') || msg.includes('ws://') || msg.includes('wss://')) {
+          e.stopImmediatePropagation();
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function(e) {
+        var reason = e && e.reason ? (e.reason.message || String(e.reason)).toLowerCase() : '';
+        if (reason.includes('websocket') || reason.includes('ws://') || reason.includes('wss://')) {
+          e.preventDefault();
+        }
+      });
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-amber-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

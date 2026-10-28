@@ -1,0 +1,6 @@
+{
+  "name": "MATH STORY AI",
+  "description": "Xưởng sáng tạo câu chuyện Toán học bằng Trí tuệ Nhân tạo dành cho học sinh tiểu học. Giải pháp đổi mới phương pháp dạy học theo Chương trình GDPT 2018.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
