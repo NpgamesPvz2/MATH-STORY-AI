@@ -22,7 +22,7 @@ import { evaluateWithGemini } from '../../services/api';
 interface TeacherModerationProps {
   project: ProjectLesson;
   onUpdateChecklist: (checklist: ModerationChecklist) => void;
-  onSaveApprovalDetails: (school: string, checklist: ModerationChecklist) => void;
+  onSaveApprovalDetails: (school: string, author: string, checklist: ModerationChecklist) => void;
   onPublishProject?: (checklist: ModerationChecklist, school: string) => void;
   onGoToLibrary: () => void;
   selectedGrade?: string;
@@ -119,7 +119,7 @@ export const TeacherModeration: React.FC<TeacherModerationProps> = ({
     if (status === 'ĐÃ_XUẤT_BẢN' && onPublishProject) {
       onPublishProject(updated, schoolName.trim());
     } else {
-      onSaveApprovalDetails(schoolName.trim(), updated);
+      onSaveApprovalDetails(schoolName.trim(), teacherName.trim(), updated);
     }
     setSaveSuccess(true);
     if (status === 'ĐÃ_XUẤT_BẢN') {
@@ -136,7 +136,7 @@ export const TeacherModeration: React.FC<TeacherModerationProps> = ({
       approvedDate,
     };
     setChecklist(updated);
-    onSaveApprovalDetails(schoolName.trim(), updated);
+    onSaveApprovalDetails(schoolName.trim(), teacherName.trim(), updated);
     setSaveSuccess(true);
     setTimeout(() => setSaveSuccess(false), 3000);
   };

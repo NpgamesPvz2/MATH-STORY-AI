@@ -390,13 +390,14 @@ export default function App() {
   };
 
   // Phân hệ 9 publishing: creates a brand new project in the library without overwriting the sample or existing items
-  const handleSaveApprovalDetails = (school: string, checklist: ModerationChecklist) => {
+  const handleSaveApprovalDetails = (school: string, author: string, checklist: ModerationChecklist) => {
     if (!activeProject) return;
     const isSample = activeProject.isSample || activeProject.id === 'project-cam-sample';
     const base = getWorkingProject(activeProject);
     const updated: ProjectLesson = {
       ...base,
       school,
+      author,
       moderationChecklist: checklist,
     };
 
@@ -420,6 +421,7 @@ export default function App() {
       id: targetId,
       problemCode: activeProject.problemCode || activeProject.mathAnalysis?.problemCode || 'TOAN2-CAM01',
       school: school?.trim() || activeProject.school,
+      author: checklist.approvedBy?.trim() || activeProject.author,
       grade: selectedGrade || activeProject.grade || 'Lớp 2',
       classId: selectedGrade || activeProject.grade || 'Lớp 2',
       isSample: false, // Newly published lesson, keep sample intact
